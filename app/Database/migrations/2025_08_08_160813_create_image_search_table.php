@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid')->unique();
             $table->integer('user_id');
+            $table->integer('status_code');
+            $table->json('search_metadata')->nullable();
+            $table->json('search_parameters')->nullable();
+            $table->json('search_information')->nullable();
+            $table->json('organic_results')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
